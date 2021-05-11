@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org/">
+ <head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+
+	<div class="container">	
+							
+	<h1>Cadastrar um fornecedor</h1>
+	
+	<form action="/fornecedor/salvarFornecedor" method="post">
+	<input name="id" type="hidden" class="form-control" th:value="${fornecedor.id}">
+		<table>
+			<div class="form-group">
+				<label>Nome do fornecedor:</label>
+				<input name="nome" type="text"  class="form-control"  th:value="${fornecedor.nome}"
+				required placeholder="Nome do fornecedor..."
+				 oninvalid="this.setCustomValidity('Digite o nome do fornecedor')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Endereço do fornecedor:</label>
+				<input name="endereco" type="text"   class="form-control"  th:value="${fornecedor.endereco}"
+				required placeholder="Endereço do fornecedor..."
+				 oninvalid="this.setCustomValidity('Digite o endereço do fornecedor')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Telefone do fornecedor:</label>
+				<input name="telefone" type="tel"  class="form-control"  th:value="${fornecedor.telefone}"
+				required placeholder="(xx)xxxxxxxxx"
+				 oninvalid="this.setCustomValidity('Digite número do telefone do fornecedor')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Email do fornecedor:</label>
+				<input name="email" type="email"  class="form-control"  th:value="${fornecedor.email}"
+				required placeholder="Email do fornecedor..."
+				 oninvalid="this.setCustomValidity('Digite email do telefone do fornecedor')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			 
+			     <div >
+					
+					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
+					
+					<a href="/fornecedor/lista" class="btn btn-primary bt-agenda">Listar fornecedor</a>						
+					<a href="/produto/cadastro" class="btn btn-primary bt-agenda">Cadastrar produtos</a>				
+					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+		
+			    </div>
+		</table>
+	</form>
+
+	 </div>
+</body>
+</html>

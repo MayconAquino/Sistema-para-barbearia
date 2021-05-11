@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+
+<div class="container">
+
+	<h1>Cadastrar um produto</h1>
+
+	<form action="/produto/salvarProduto" method="post">
+		<input name="id" type="hidden" class="form-control"
+			th:value="${produto.id}">
+		<table>
+			<div class="form-group">
+				<label>Nome do produtor:</label> 
+					<input name="descricao" type="text" class="form-control" th:value="${produto.descricao}" required
+					placeholder="Descrição do produto..."
+					oninvalid="this.setCustomValidity('Digite a descrição do produto')"
+					oninput="this.setCustomValidity('')">
+			</div>
+			
+			 <div >
+					
+					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
+					<a href="/produto/lista" class="btn btn-primary bt-agenda">Listar produtos</a>
+					<a href="/fornecedor/cadastro"  class="btn btn-primary bt-agenda">Voltar</a>
+		
+			    </div>
+
+
+		</table>
+	</form>
+
+</div>
+</body>
+</html>

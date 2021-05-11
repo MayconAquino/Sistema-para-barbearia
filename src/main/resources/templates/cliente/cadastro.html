@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org/">
+ <head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+
+	<div class="container">	
+							
+	<h1>Cadastrar um cliente</h1>
+	
+	<form action="/cliente/salvarCliente" method="post">
+	<input name="id" type="hidden" class="form-control" th:value="${cliente.id}">
+		<table>
+			<div class="form-group">
+				<label>Nome do cliente:</label>
+				<input name="nome" type="text"  class="form-control"  th:value="${cliente.nome}"
+				required placeholder="Nome do cliente..."
+				 oninvalid="this.setCustomValidity('Digite o nome do cliente')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Endereço do cliente:</label>
+				<input name="endereco" type="text"   class="form-control"  th:value="${cliente.endereco}"
+				required placeholder="Endereço do cliente..."
+				 oninvalid="this.setCustomValidity('Digite o endereço do cliente')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Telefone do cliente:</label>
+				<input name="telefone" type="tel"  class="form-control"  th:value="${cliente.telefone}"
+				required placeholder="(xx)xxxxxxxxx"
+				 oninvalid="this.setCustomValidity('Digite número do telefone do cliente')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Email do cliente:</label>
+				<input name="email" type="email"  class="form-control"  th:value="${cliente.email}"
+				required placeholder="Email do cliente..."
+				 oninvalid="this.setCustomValidity('Digite email do telefone do cliente')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			 
+			     <div class="bt-agenda">
+					
+					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
+					<a href="/cliente/lista" class="btn btn-primary bt-agenda">Listar cliente</a>
+					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+		
+			    </div>
+		</table>
+	</form>
+
+	 </div>
+</body>
+</html>

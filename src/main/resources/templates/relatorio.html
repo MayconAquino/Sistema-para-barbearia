@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+</head>
+
+	 
+		<body>	
+		<div class="container">
+		<h1><strong>Gerar relatório:</strong></h1>	
+		<a href="/" class="btn btn-primary">Voltar</a>
+			</br>				
+			<div class="relatorio">
+				<form action="/relatorio/01/porDataAtual" method="post">
+					<label>Gerar relatório do dia:  <span th:text="${#temporals.format(dataAtual, 'dd/MM/yyyy')}" style="font-size: 20px; font-weight: bold;"></span></label>					
+					<button type="submit" class="btn btn-primary" name="porDataAtual" >Gerar</button>	
+				</form>	
+			</div>	
+			
+				<br>
+			<div  class="relatorio">
+				<form action="/relatorio/02/clientes" method="post">
+					<label>Gerar relatório dos clientes:</label>
+					<button type="submit" class="btn btn-primary" >Gerar</button> 				
+				</form>
+			</div>
+				<br>
+			<div  class="relatorio">
+				<form action="/relatorio/03/saidas" method="post">
+					<label>Gerar relatório das saídas:</label>
+				
+					<button type="submit" class="btn btn-primary" >Gerar</button> 				
+				</form>
+			</div>
+
+			<br>
+			<div  class="relatorio">
+				<form action="/relatorio/04/porData" method="post">
+					<label>Gerar relatório por data:</label>
+					<input type="date" class="form-control" id="relatorioPorData" name="porData" required> 	
+					<button type="submit" class="btn btn-primary" >Gerar</button> 				
+				</form>
+			</div>
+			
+			<br>
+			<div class="relatorio">
+				<form action="/relatorio/05/porFuncionario" method="post">
+					<label>Gerar relatório de agenda por funcionário: </label>
+					<select class="form-control" name="idFuncionario" required="required">
+						<option value="" selected="selected">Funcionários...</option>
+						<option th:each="funcionario: ${listaDeFuncionarios}" th:value="${funcionario.id}" th:text="${funcionario.nome}"></option>
+					</select>
+					<button type="submit" class="btn btn-primary" >Gerar</button>  
+				</form>
+			</div>	
+		
+		</div>	
+		</body>
+		
+</html>

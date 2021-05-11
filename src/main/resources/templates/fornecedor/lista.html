@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+		<body class="lista">
+			<div class="container">
+	
+				<h1>Lista de fornecedor</h1>
+			
+				<div class="bt-agenda2">
+					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					<a href="/fornecedor/cadastro" class="btn btn-primary bt-agenda2">Cadastrar fornecedor</a>			
+				</div >
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Endereço</th>
+							<th>Telefone</th>
+							<th>Email</th>
+							<th>Editar</th>
+							<th>Excluir</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="fornecedor : ${listaFornecedor}">
+							<td th:text="${fornecedor.nome}">Nome do fornecedor</td>					
+							<td th:text="${fornecedor.endereco}">Endereço do fornecedor</td>  
+							<td th:text="${fornecedor.telefone}">Telefone do fornecedor</td>  
+							<td th:text="${fornecedor.email}">Email do fornecedor</td>  
+							<td><a th:href="@{/fornecedor/editar/{id}(id=${fornecedor.id})}" class="btn btn-primary">Editar</a></td>
+							<td><a th:href="@{/fornecedor/excluir/{id}(id=${fornecedor.id})}" class="btn btn-primary">Excluir</a></td>
+						</tr>	
+					</tbody>			
+				</table>
+			</div>
+		</body>
+</html>

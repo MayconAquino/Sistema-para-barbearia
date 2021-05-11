@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+</head>
+		<body class="lista">
+			<div class="container">
+	
+				<h1>Lista de funcionário</h1>
+			
+				<div class="bt-agenda2">
+					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					<a href="/funcionario/cadastro" class="btn btn-primary bt-agenda2">Cadastrar funcionário</a>			
+				</div >
+				
+				<table class="table">
+					<thead>
+						<tr>
+						
+							<th>Comissão R$:</th>
+							<th>Nome</th>
+							<th>Função</th>
+							<th>Data de admissão</th>
+							
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="funcionario : ${listaFuncionarios}">
+							<td th:text="${funcionario.comissao}">Comissao</td>
+							<td th:text="${funcionario.nome}">Nome</td>
+							<td th:text="${funcionario.funcao}">Função</td>
+							<td th:text="${#temporals.format(funcionario.dataAdmissao,'dd/MM/yyyy')}">Dia</td>
+							
+							<td><a th:href="@{/funcionario/editar/{id}(id=${funcionario.id})}" class="btn btn-primary">Editar</a></td>
+							<td><a th:href="@{/funcionario/excluir/{id}(id=${funcionario.id})}" class="btn btn-primary">Excluir</a></td>
+						<tr>
+					</tbody>			
+				</table>
+			</div>
+		</body>
+</html>

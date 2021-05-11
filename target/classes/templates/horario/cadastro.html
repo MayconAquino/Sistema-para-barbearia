@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>Cadastrar Horario</title>
+</head>
+<body>
+
+	<div class="container">
+	<h1>Cadastrar os horários do dia</h1>
+	
+	<form action="/horario/salvarHorario" method="post">
+	<input name="id" type="hidden" class="form-control" th:value="${horario.id}">
+		<table>
+			<div class="form-group">
+				<label>Horário:</label>
+				<input name="hora" type="time" class="form-control" th:value="${horario.hora}" 
+				 required placeholder="Horário..."
+				 oninvalid="this.setCustomValidity('Digite o horário')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+		
+			      <div class="bt-agenda">
+					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
+					<a href="/horario/lista" class="btn btn-primary bt-agenda">Listar Horario</a>
+					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+			     </div>
+		</table>
+	</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org/">
+ <head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+</head>
+<body>
+	
+	<div class="container">	
+							
+	<h1>Cadastrar um serviço</h1>
+	
+	<form action="/servico/salvarServico" method="post">
+	<input name="id" type="hidden" class="form-control" th:value="${servico.id}">
+		<table>
+			<div class="form-group">
+				<label>Descrição serviço:</label>
+				<input name="descricao" type="text"  class="form-control"  th:value="${servico.descricao}"
+				required placeholder="Serviço..."
+				 oninvalid="this.setCustomValidity('Digite a descrição do serviço')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			
+			<div class="form-group">
+				<label>Preço:</label>
+				<input name="preco" type="number" min="1"  class="form-control"  th:value="${servico.preco}"
+				required placeholder="Preço do serviço..."
+				 oninvalid="this.setCustomValidity('Digite o preço do serviço')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+			 
+			     <div class="bt-agenda">
+					
+					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
+					<a href="/servico/lista" class="btn btn-primary bt-agenda">Listar Serviço</a>
+					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+		
+			    </div>
+		</table>
+	</form>
+
+	 </div>
+</body>
+</html>

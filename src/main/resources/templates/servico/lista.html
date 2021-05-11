@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+		<body class="lista">
+			<div class="container">
+	
+				<h1>Lista de serviços</h1>
+			
+				<div class="bt-agenda2">
+					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					<a href="/servico/cadastro" class="btn btn-primary bt-agenda2">Cadastrar serviço</a>			
+				</div >
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Descrição</th>
+							<th>Preço</th>
+							<th>Editar</th>
+							<th>Excluir</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="servico : ${listaDeServicos}">
+							<td th:text="${servico.descricao}">Descrição do serviço</td>
+							<td th:text="${servico.preco}">Preço do serviço</td>  
+							<td><a th:href="@{/servico/editar/{id}(id=${servico.id})}" class="btn btn-primary">Editar</a></td>
+							<td><a th:href="@{/servico/excluir/{id}(id=${servico.id})}" class="btn btn-primary">Excluir</a></td>
+						</tr>	
+					</tbody>			
+				</table>
+			</div>
+		</body>
+</html>

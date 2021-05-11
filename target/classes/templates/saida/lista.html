@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header :: head}">
+<meta charset="UTF-8">
+<title>MD Barbearia</title>
+</head>
+		<body class="lista">
+			<div class="container">
+	
+				<h1>Lista de saída</h1>
+			
+				<div class="bt-agenda2">
+					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					<a href="/saida/cadastro" class="btn btn-primary bt-agenda2">Cadastrar saída</a>			
+				</div >
+				
+				<table class="table">
+					<thead>
+						<tr>
+						
+							<th>Produto:</th>
+							<th>Fornecedor</th>
+							<th>Valor</th>
+							<th>Unidade</th>
+							<th>Data saída</th>
+							<th>TOTAL</th>
+							
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="saida : ${listaSaida}">
+							<td th:text="${saida.produto.descricao}"></td>
+							<td th:text="${saida.fornecedor.nome}"></td>
+							<td th:text="${saida.valor}"></td>
+							<td th:text="${saida.unidade}"></td>
+							<td th:text="${#temporals.format(saida.dataSaida,'dd/MM/yyyy')}"></td>
+							<td th:text="${saida.total}"></td>
+							
+							<td><a th:href="@{/saida/editar/{id}(id=${saida.id})}" class="btn btn-primary">Editar</a></td>
+							<td><a th:href="@{/saida/excluir/{id}(id=${saida.id})}" class="btn btn-primary">Excluir</a></td>
+						<tr>
+					</tbody>			
+				</table>
+			</div>
+		</body>
+</html>

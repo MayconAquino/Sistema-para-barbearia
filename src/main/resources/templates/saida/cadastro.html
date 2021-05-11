@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org/">
+	<head th:insert="~{header :: head}">
+		<meta charset="UTF-8">
+		<title>MD Barbearia</title>
+	</head>
+	
+	
+	<body>
+	   <div class="container">
+			<h1><strong>Cadastro de saídas:</strong></h1>
+	
+			<form action="/saida/salvarSaida" method="post">
+			<input name="id" type="hidden" class="form-control" th:value="${saida.id}">
+			<table>
+				<div class="form-group"> 
+					<label>Produto:</label>
+					<select th:field="${saida.produto.id}" class="form-control" required>
+							<option value="">Selecione...</option>
+							<option th:each="produto : ${listaDeProduto}" th:value="${produto.id}" th:text="${produto.descricao}" ></option>
+						</select>	
+				</div>
+				
+				
+				<div class="form-group">
+					<label>Fornecedor</label>					
+						<select th:field="${saida.fornecedor.id}" class="form-control" required>
+							<option value="">Selecione...</option>
+							<option th:each="fornecedor : ${listaDeFornecedor}" th:value="${fornecedor.id}" th:text="${fornecedor.nome}" ></option>
+						</select>
+				</div>
+				
+				<div class="form-group">
+					<label>Valor do produto</label>
+					<input name="valor" type="number"  class="form-control" th:value="${saida.valor}" required>
+				</div>
+				
+				<div class="form-group">
+					<label>Unidades</label>
+					<input name="unidade" type="number" class="form-control" th:value="${saida.unidade}" required>
+				</div>
+				
+				
+				
+				
+				<div class="form-group">
+				<label>Data da saida:</label>
+				<input name="dataSaida" type="date" class="form-control"  th:value="${saida.dataSaida}" 
+				 required placeholder="Data da saída..."
+				 oninvalid="this.setCustomValidity('Digite a data da saída')"
+                 oninput="this.setCustomValidity('')" >
+			</div>
+				
+							
+				
+				<div class="bt-agenda">
+				
+					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
+					
+					<a href="/saida/lista" class="btn btn-primary bt-agenda">Listar saídas</a>
+					
+					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+				</div>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

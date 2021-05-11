@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+	<head th:insert="~{header :: head}">
+		<meta charset="UTF-8">
+		<title>MD Barbearia</title>
+	</head>
+	
+	<body>
+		<div class="container">		    
+				<h1>
+				<strong><em>𝕄𝔻 𝔹𝕒𝕣𝕓𝕖𝕒𝕣𝕚𝕒</em></strong>					
+				</h1>	
+						
+		</div>
+		<div class="mesmo-tamanho" >
+			<ul>
+				 <li><a href= "/agenda/cadastro" class="btn btn-primary mesmo-tamanho" >Agendar horário</a></li>
+				 </br>		
+				 <li><a href= "/servico/lista" class="btn btn-primary mesmo-tamanho" >Lista de serviço</a></li>
+				 </br>
+				 <li><a href= "/horario/lista" class="btn btn-primary mesmo-tamanho">Lista de horário</a></li>
+				 </br>
+		    	 <li><a href= "/funcionario/lista" class="btn btn-primary mesmo-tamanho">Lista de funcionário</a></li>	
+		    	 </br>
+		    	 <li><a href= "/cliente/lista" class="btn btn-primary mesmo-tamanho">Lista de cliente</a></li>	
+		    	 </br>
+		    	 <li><a href= "/fornecedor/lista" class="btn btn-primary mesmo-tamanho">Lista de fornecedor</a></li>	
+		    	 </br>		    	
+		    	 <li><a href= "/saida/cadastro" class="btn btn-primary mesmo-tamanho">Saídas</a></li>
+		    	 </br>
+		    	 <li><a href= "/relatorio/" class="btn btn-primary mesmo-tamanho">Relatórios</a></li>	
+		    	 			 		
+			</ul>
+		</div>
+		<span style="font-size: 20px; font-weight: bold;">---> Dia: <span th:text="${#temporals.format(dataAtual, 'dd/MM/yyyy')}" style="font-size: 20px; font-weight: bold;"></span></span>
+		<table class="responstable">
+			<thead>
+				<tr>
+					<th>Cliente</th>
+					<th>Horário</th>
+					<th>Serviço</th>
+					<th>Preço$</th>
+					<th>Dia</th>
+					<th>Funcionário</th>
+					<th>Atendido</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="agenda : ${agendaDoDiaAtual}">
+					<td th:text="${agenda.cliente.nome}">Cliente</td>
+					<td th:text="${agenda.horario.hora}">horario</td>
+					<td th:text="${agenda.servico.descricao}">Serviço</td>
+					<td th:text="${agenda.servico.preco}">Preco</td>
+					<td th:text="${#temporals.format(agenda.dia,'dd/MM/yyyy')}">Dia</td>
+					<td th:text="${agenda.Funcionario.nome}">Funcionário</td>
+					<td><input type="checkbox" ></td>
+					<td><a th:href="@{/agenda/editar/{id}(id=${agenda.id})}" class="btn btn-primary">Editar</a></td>
+					<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}" class="btn btn-primary">Excluir</a></td>
+				<tr>
+			</tbody>	
+		</table>
+		<div th:insert="~{footer :: copy}"></div>
+	</body>
+</html>
+
+ 
+           

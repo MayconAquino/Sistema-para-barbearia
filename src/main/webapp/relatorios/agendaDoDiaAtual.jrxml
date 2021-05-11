@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="agendaDoDiaAtual" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="086cf08a-0efe-4603-9c61-ed4050bd291a">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente]]></fieldDescription>
+	</field>
+	<field name="horario" class="com.barbearia.model.Horario">
+		<fieldDescription><![CDATA[horario]]></fieldDescription>
+	</field>
+	<field name="funcionario" class="com.barbearia.model.Funcionario">
+		<fieldDescription><![CDATA[funcionario]]></fieldDescription>
+	</field>
+	<field name="servico" class="com.barbearia.model.Servico">
+		<fieldDescription><![CDATA[servico]]></fieldDescription>
+	</field>
+	<field name="dia" class="java.time.LocalDate">
+		<fieldDescription><![CDATA[dia]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="10" width="200" height="40" uuid="776f179e-6838-4328-8b51-65b04f649d6f"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Agenda de hoje]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="0" width="150" height="39" uuid="3846c5d1-07f2-4561-9e1c-b4257414ed41">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bfc71b9-63d3-4cd4-b23c-7deeb080fdf1"/>
+				</reportElement>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="98" height="39" uuid="27db8316-291e-49f5-a91e-b3823a5e2280">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bfc71b9-63d3-4cd4-b23c-7deeb080fdf1"/>
+				</reportElement>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="99" height="39" uuid="8d0d3b0b-78f2-4fea-8a43-c5f961a035c9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bfc71b9-63d3-4cd4-b23c-7deeb080fdf1"/>
+				</reportElement>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Corte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="0" width="110" height="39" uuid="69ef94ff-ca8d-497d-aa7a-282adcee7e49">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bfc71b9-63d3-4cd4-b23c-7deeb080fdf1"/>
+				</reportElement>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barbeiro]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="50" y="0" width="149" height="30" uuid="fe426718-f407-4c98-803d-22eac820963c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0bfc71b9-63d3-4cd4-b23c-7deeb080fdf1"/>
+				</reportElement>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="99" height="30" uuid="007f3a25-0a28-4327-81a0-689537c2600a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="08019776-dfe5-45b7-b925-4126e6d54241"/>
+				</reportElement>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horario}.getHora()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="99" height="30" uuid="057512f8-2c41-4ce0-a077-c95ebd862d49">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11996c81-11d7-4664-9c24-92dbf8335cc9"/>
+				</reportElement>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servico}.getDescricao()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="109" height="30" uuid="b909512d-d52e-49d8-b5d1-f40c7da46764">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f69ada9a-7f7c-4fa6-be35-8552a4173f3c"/>
+				</reportElement>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario}.getNome()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
