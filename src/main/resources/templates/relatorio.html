@@ -29,7 +29,7 @@
 			<div  class="relatorio">
 				<form action="/relatorio/03/saidas" method="post">
 					<label>Gerar relatório das saídas:</label>
-				
+					<input type="date" class="form-control" name="dataSaida" required> 
 					<button type="submit" class="btn btn-primary" >Gerar</button> 				
 				</form>
 			</div>
@@ -37,8 +37,8 @@
 			<br>
 			<div  class="relatorio">
 				<form action="/relatorio/04/porData" method="post">
-					<label>Gerar relatório por data:</label>
-					<input type="date" class="form-control" id="relatorioPorData" name="porData" required> 	
+					<label>Gerar relatório de agenda por data:</label>
+					<input type="date" class="form-control" name="porData" required> 	
 					<button type="submit" class="btn btn-primary" >Gerar</button> 				
 				</form>
 			</div>
@@ -47,7 +47,7 @@
 			<div class="relatorio">
 				<form action="/relatorio/05/porFuncionario" method="post">
 					<label>Gerar relatório de agenda por funcionário: </label>
-					<select class="form-control" name="idFuncionario" required="required">
+					<select class="form-control" name="idDoFuncionario" required="required">
 						<option value="" selected="selected">Funcionários...</option>
 						<option th:each="funcionario: ${listaDeFuncionarios}" th:value="${funcionario.id}" th:text="${funcionario.nome}"></option>
 					</select>

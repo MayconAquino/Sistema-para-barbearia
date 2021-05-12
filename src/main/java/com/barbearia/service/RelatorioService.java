@@ -1,6 +1,7 @@
 package com.barbearia.service;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +21,7 @@ public class RelatorioService {
 	
 	public void porDataAtual(String nomeDoRelatorio, String data, HttpServletResponse response) throws IOException {
 		
-		jasperService.addParams("pordataatual", conversaoService.stringParaDate(data));
+		jasperService.addParams("pordataatual", conversaoService.localDateParaDate(LocalDate.now()));
 		
 		byte[] bytes = jasperService.exportarPDF(nomeDoRelatorio);
 		
@@ -39,7 +40,9 @@ public class RelatorioService {
 		response.getOutputStream().write(bytes);
 	}
 	
-	public void saidas(String nomeDoRelatorio, HttpServletResponse response) throws IOException {
+	public void saidas(String nomeDoRelatorio, String dataSaida, HttpServletResponse response) throws IOException {
+		
+		jasperService.addParams("dataSaida", conversaoService.stringParaDate(dataSaida));
 		
 		byte[] bytes = jasperService.exportarPDF(nomeDoRelatorio);
 		
@@ -60,9 +63,9 @@ public class RelatorioService {
 	}
 	
 	
-	public void porFuncionario(String nomeDoRelatorio, String funcionario, HttpServletResponse response) throws IOException {
+	public void porFuncionario(String nomeDoRelatorio, Long idDoFuncionario, HttpServletResponse response) throws IOException {
 		
-		jasperService.addParams("porFuncionario", conversaoService.stringParaDate(funcionario));
+		jasperService.addParams("porFuncionario", idDoFuncionario);
 		
 		byte[] bytes = jasperService.exportarPDF(nomeDoRelatorio);
 		
