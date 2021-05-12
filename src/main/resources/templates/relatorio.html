@@ -8,13 +8,16 @@
 	 
 		<body>	
 		<div class="container">
-		<h1><strong>Gerar relatório:</strong></h1>	
-		<a href="/" class="btn btn-primary">Voltar</a>
+		
+			
+		<h1><a href="/" ><i class="fas fa-arrow-left"></i></a><strong>  Relatórios:</strong></h1>	
+						
 			</br>				
 			<div class="relatorio">
 				<form action="/relatorio/01/porDataAtual" method="post">
 					<label>Gerar relatório do dia:  <span th:text="${#temporals.format(dataAtual, 'dd/MM/yyyy')}" style="font-size: 20px; font-weight: bold;"></span></label>					
-					<button type="submit" class="btn btn-primary" name="porDataAtual" >Gerar</button>	
+					<br>
+					<button type="submit" class="btn btn-primary"> <i class="fas fa-file-download"></i>  Gerar</button> 	
 				</form>	
 			</div>	
 			
@@ -22,15 +25,16 @@
 			<div  class="relatorio">
 				<form action="/relatorio/02/clientes" method="post">
 					<label>Gerar relatório dos clientes:</label>
-					<button type="submit" class="btn btn-primary" >Gerar</button> 				
+					<br>
+					<button type="submit" class="btn btn-primary"> <i class="fas fa-file-download"></i>  Gerar</button> 				
 				</form>
 			</div>
 				<br>
 			<div  class="relatorio">
 				<form action="/relatorio/03/saidas" method="post">
 					<label>Gerar relatório das saídas:</label>
-					<input type="date" class="form-control" name="dataSaida" required> 
-					<button type="submit" class="btn btn-primary" >Gerar</button> 				
+					<input type="date" class="form-control" name="dataSaida" style="margin-bottom: 5px" required> 
+					<button type="submit" class="btn btn-primary"> <i class="fas fa-file-download"></i>  Gerar</button> 				
 				</form>
 			</div>
 
@@ -39,7 +43,7 @@
 				<form action="/relatorio/04/porData" method="post">
 					<label>Gerar relatório de agenda por data:</label>
 					<input type="date" class="form-control" name="porData" required> 	
-					<button type="submit" class="btn btn-primary" >Gerar</button> 				
+					<button type="submit" class="btn btn-primary"> <i class="fas fa-file-download"></i>  Gerar</button> 				
 				</form>
 			</div>
 			
@@ -51,7 +55,7 @@
 						<option value="" selected="selected">Funcionários...</option>
 						<option th:each="funcionario: ${listaDeFuncionarios}" th:value="${funcionario.id}" th:text="${funcionario.nome}"></option>
 					</select>
-					<button type="submit" class="btn btn-primary" >Gerar</button>  
+					<button type="submit" class="btn btn-primary"> <i class="fas fa-file-download"></i>  Gerar</button> 	
 				</form>
 			</div>	
 		
