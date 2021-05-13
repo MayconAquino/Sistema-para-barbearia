@@ -14,26 +14,26 @@
 		</div>
 		<div class="mesmo-tamanho" >
 			<ul>
-				 <li><a href= "/agenda/cadastro" class="btn btn-primary mesmo-tamanho" >Agendar horário</a></li>
+				 <li><a href= "/agenda/cadastro" class="btn btn-primary mesmo-tamanho" ><i class="fas fa-edit"></i> Agendar horário</a></li>
 				 </br>		
-				 <li><a href= "/servico/lista" class="btn btn-primary mesmo-tamanho" >Lista de serviço</a></li>
+				 <li><a href= "/servico/lista" class="btn btn-primary mesmo-tamanho" ><i class="fas fa-list"></i> Lista de serviço</a></li>
 				 </br>
-				 <li><a href= "/horario/lista" class="btn btn-primary mesmo-tamanho">Lista de horário</a></li>
+				 <li><a href= "/horario/lista" class="btn btn-primary mesmo-tamanho"><i class="fas fa-list"></i> Lista de horário</a></li>
 				 </br>
-		    	 <li><a href= "/funcionario/lista" class="btn btn-primary mesmo-tamanho">Lista de funcionário</a></li>	
+		    	 <li><a href= "/funcionario/lista" class="btn btn-primary mesmo-tamanho"><i class="fas fa-list"></i> Lista de funcionário</a></li>	
 		    	 </br>
-		    	 <li><a href= "/cliente/lista" class="btn btn-primary mesmo-tamanho">Lista de cliente</a></li>	
+		    	 <li><a href= "/cliente/lista" class="btn btn-primary mesmo-tamanho"><i class="fas fa-list"></i> Lista de cliente</a></li>	
 		    	 </br>
-		    	 <li><a href= "/fornecedor/lista" class="btn btn-primary mesmo-tamanho">Lista de fornecedor</a></li>	
+		    	 <li><a href= "/fornecedor/lista" class="btn btn-primary mesmo-tamanho"><i class="fas fa-list"></i> Lista de fornecedor</a></li>	
 		    	 </br>		    	
-		    	 <li><a href= "/saida/cadastro" class="btn btn-primary mesmo-tamanho">Saídas</a></li>
+		    	 <li><a href= "/saida/cadastro" class="btn btn-primary mesmo-tamanho"><i class="fas fa-sign-out-alt"></i> Saídas</a></li>
 		    	 </br>
-		    	 <li><a href= "/relatorio/" class="btn btn-primary mesmo-tamanho">Relatórios</a></li>	
+		    	 <li><a href= "/relatorio/" class="btn btn-primary mesmo-tamanho"><i class="fas fa-download"></i> Relatórios</a></li>	
 		    	 			 		
 			</ul>
 		</div>
-		<span style="font-size: 20px; font-weight: bold;">---> Dia: <span th:text="${#temporals.format(dataAtual, 'dd/MM/yyyy')}" style="font-size: 20px; font-weight: bold;"></span></span>
-		<table class="responstable">
+		<span style="font-size: 20px; font-weight: bold;"><i class="far fa-clock" style="width:22;height:22"></i>  Dia: <span th:text="${#temporals.format(dataAtual, 'dd/MM/yyyy')}" style="font-size: 20px; font-weight: bold;"></span></span>
+		<table class="table">
 			<thead>
 				<tr>
 					<th>Cliente</th>
@@ -55,9 +55,10 @@
 					<td th:text="${agenda.servico.preco}">Preco</td>
 					<td th:text="${#temporals.format(agenda.dia,'dd/MM/yyyy')}">Dia</td>
 					<td th:text="${agenda.Funcionario.nome}">Funcionário</td>
-					<td><input type="checkbox" ></td>
-					<td><a th:href="@{/agenda/editar/{id}(id=${agenda.id})}" class="btn btn-primary">Editar</a></td>
-					<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}" class="btn btn-primary">Excluir</a></td>
+					<td><input type="checkbox" value="true"></td>	
+									
+					<td><a  th:href="@{/agenda/editar/{id}(id=${agenda.id})}"><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+					<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}" ><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 				<tr>
 			</tbody>	
 		</table>

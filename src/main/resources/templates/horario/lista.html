@@ -6,10 +6,10 @@
 </head>
 		<body class="lista">
 			<div class="container">	
-				<h1>Lista de horários</h1>
+				<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Lista de horários</h1>
 			
 				<div class="bt-agenda2">
-					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					
 					<a href="/horario/cadastro" class="btn btn-primary bt-agenda2">Cadastrar horários</a>			
 				</div >
 				
@@ -23,8 +23,8 @@
 						<tr th:each="horario : ${listaHorarios}">
 							<td th:text="${horario.hora}">Hora</td>
 							
-							<td><a th:href="@{/horario/editar/{id}(id=${horario.id})}" class="btn btn-primary">Editar</a></td>
-							<td><a th:href="@{/horario/excluir/{id}(id=${horario.id})}" class="btn btn-primary">Excluir</a></td>
+							<td><a th:href="@{/horario/editar/{id}(id=${horario.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/horario/excluir/{id}(id=${horario.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						<tr>
 					</tbody>			
 				</table>

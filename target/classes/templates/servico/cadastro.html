@@ -8,7 +8,7 @@
 	
 	<div class="container">	
 							
-	<h1>Cadastrar um serviço</h1>
+	<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Cadastrar um serviço</h1>
 	
 	<form action="/servico/salvarServico" method="post">
 	<input name="id" type="hidden" class="form-control" th:value="${servico.id}">
@@ -32,9 +32,7 @@
 			     <div class="bt-agenda">
 					
 					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
-					<a href="/servico/lista" class="btn btn-primary bt-agenda">Listar Serviço</a>
-					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
-		
+					<a href="/servico/lista" class="btn btn-primary bt-agenda">Listar Serviço</a>	
 			    </div>
 		</table>
 	</form>

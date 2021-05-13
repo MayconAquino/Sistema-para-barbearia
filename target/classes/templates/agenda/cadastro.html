@@ -8,7 +8,7 @@
 	
 	<body>
 	   <div class="container">
-			<h1><strong>Agendamento de horário:</strong></h1>
+			<h1><strong><a href="/" ><i class="fas fa-arrow-left" ></i></a>  Agendamento de horário:</strong></h1>
 	
 			<form action="/agenda/salvarAgenda" method="post">
 			<input name="id" type="hidden" class="form-control" th:value="${agenda.id}">
@@ -57,7 +57,7 @@
 					
 					<a href="/agenda/lista" class="btn btn-primary bt-agenda">Listar Agenda</a>
 					
-					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+					
 				</div>
 			</table>
 		</form>

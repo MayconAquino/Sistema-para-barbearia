@@ -7,10 +7,9 @@
 		<body class="lista">
 			<div class="container">
 	
-				<h1>Lista de funcionário</h1>
+				<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Lista de funcionário</h1>
 			
 				<div class="bt-agenda2">
-					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
 					<a href="/funcionario/cadastro" class="btn btn-primary bt-agenda2">Cadastrar funcionário</a>			
 				</div >
 				
@@ -33,8 +32,8 @@
 							<td th:text="${funcionario.funcao}">Função</td>
 							<td th:text="${#temporals.format(funcionario.dataAdmissao,'dd/MM/yyyy')}">Dia</td>
 							
-							<td><a th:href="@{/funcionario/editar/{id}(id=${funcionario.id})}" class="btn btn-primary">Editar</a></td>
-							<td><a th:href="@{/funcionario/excluir/{id}(id=${funcionario.id})}" class="btn btn-primary">Excluir</a></td>
+							<td><a th:href="@{/funcionario/editar/{id}(id=${funcionario.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/funcionario/excluir/{id}(id=${funcionario.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						<tr>
 					</tbody>			
 				</table>

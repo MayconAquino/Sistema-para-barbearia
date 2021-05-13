@@ -37,7 +37,7 @@ public class RelatórioController {
 		return "relatorio";
 	}
 	@PostMapping("/01/{nomeDoRelatorio}")
-	public void relatorioPorDataAtual(@PathVariable("nomeDoRelatorio") String nomeDoRelatorio, @RequestParam(name = "porDataAtual") String data, HttpServletResponse response) throws IOException {
+	public void relatorioPorDataAtual(@PathVariable("nomeDoRelatorio") String nomeDoRelatorio, String data, HttpServletResponse response) throws IOException {
 		relatorioService.porDataAtual(nomeDoRelatorio, data, response);
 	}
 	

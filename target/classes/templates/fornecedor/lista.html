@@ -7,10 +7,10 @@
 		<body class="lista">
 			<div class="container">
 	
-				<h1>Lista de fornecedor</h1>
+				<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Lista de fornecedor</h1>
 			
 				<div class="bt-agenda2">
-					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					
 					<a href="/fornecedor/cadastro" class="btn btn-primary bt-agenda2">Cadastrar fornecedor</a>			
 				</div >
 				
@@ -31,8 +31,8 @@
 							<td th:text="${fornecedor.endereco}">Endereço do fornecedor</td>  
 							<td th:text="${fornecedor.telefone}">Telefone do fornecedor</td>  
 							<td th:text="${fornecedor.email}">Email do fornecedor</td>  
-							<td><a th:href="@{/fornecedor/editar/{id}(id=${fornecedor.id})}" class="btn btn-primary">Editar</a></td>
-							<td><a th:href="@{/fornecedor/excluir/{id}(id=${fornecedor.id})}" class="btn btn-primary">Excluir</a></td>
+							<td><a th:href="@{/fornecedor/editar/{id}(id=${fornecedor.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/fornecedor/excluir/{id}(id=${fornecedor.id})}"  ><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						</tr>	
 					</tbody>			
 				</table>

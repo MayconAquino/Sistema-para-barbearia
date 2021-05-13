@@ -7,7 +7,7 @@
 <body>
 	 <div class="container">
 	 
-	<h1>Cadastro de funcionário:</h1>
+	<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Cadastro de funcionário:</h1>
 	
 	<form action="/funcionario/salvarFuncionario" method="post">
 	<input name="id" type="hidden" class="form-control" th:value="${funcionario.id}">
@@ -47,8 +47,7 @@
 			<div class="bt-agenda">
 				<input type="submit" value="Salvar"  class="btn btn-primary ">
 				<a href="/funcionario/lista" class="btn btn-primary">Lista Funcionário</a>
-				<a href="/" class="btn btn-primary">Voltar</a>
-				
+			
 			</div>
 			
 		</table>

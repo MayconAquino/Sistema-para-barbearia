@@ -7,10 +7,10 @@
 		<body class="lista">
 			<div class="container">
 	
-				<h1>Agenda</h1>
+				<h1><a href="/" ><i class="fas fa-arrow-left"></i></a>  Agenda</h1>
 			
 				<div class="bt-agenda2">
-					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+					
 					<a href="/agenda/cadastro" class="btn btn-primary bt-agenda2">Agendar horário</a>			
 				</div >
 				<div class="pull-right">						
@@ -18,7 +18,7 @@
 						<div class="form-inline">
 							<label>Consulta por data</label>
 							<input type="date" class="form-control"  id="consulta" name="consulta" required >
-							<button type="submit" class="btn btn-primary" >Consultar</button>
+							<button type="submit" ><i class="fas fa-search"></i></button>
 						</div>		
 					</form>
 					<br>
@@ -50,8 +50,8 @@
 						<td><input type="checkbox" ></td>
 							
 									
-							<td><a th:href="@{/agenda/editar/{id}(id=${agenda.id})}" class="btn btn-primary">Editar</a></td>
-							<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}" class="btn btn-primary">Excluir</a></td>
+							<td><a th:href="@{/agenda/editar/{id}(id=${agenda.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						<tr>
 					</tbody>			
 				</table>

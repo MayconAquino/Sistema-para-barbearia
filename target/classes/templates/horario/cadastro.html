@@ -7,7 +7,7 @@
 <body>
 
 	<div class="container">
-	<h1>Cadastrar os horários do dia</h1>
+	<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Cadastrar os horários do dia</h1>
 	
 	<form action="/horario/salvarHorario" method="post">
 	<input name="id" type="hidden" class="form-control" th:value="${horario.id}">
@@ -23,7 +23,7 @@
 			      <div class="bt-agenda">
 					<input type="submit" value="Salvar"  class="btn btn-primary bt-agenda">
 					<a href="/horario/lista" class="btn btn-primary bt-agenda">Listar Horario</a>
-					<a href="/" class="btn btn-primary bt-agenda">Voltar</a>
+					
 			     </div>
 		</table>
 	</form>

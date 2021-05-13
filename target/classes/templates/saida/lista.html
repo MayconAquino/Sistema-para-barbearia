@@ -7,10 +7,10 @@
 		<body class="lista">
 			<div class="container">
 	
-				<h1>Lista de saída</h1>
+				<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Lista de saída</h1>
 			
 				<div class="bt-agenda2">
-					<a href="/" class="btn btn-primary bt-agenda2">Voltar</a>
+
 					<a href="/saida/cadastro" class="btn btn-primary bt-agenda2">Cadastrar saída</a>			
 				</div >
 				
@@ -37,8 +37,8 @@
 							<td th:text="${#temporals.format(saida.dataSaida,'dd/MM/yyyy')}"></td>
 							<td th:text="${saida.total}"></td>
 							
-							<td><a th:href="@{/saida/editar/{id}(id=${saida.id})}" class="btn btn-primary">Editar</a></td>
-							<td><a th:href="@{/saida/excluir/{id}(id=${saida.id})}" class="btn btn-primary">Excluir</a></td>
+							<td><a th:href="@{/saida/editar/{id}(id=${saida.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/saida/excluir/{id}(id=${saida.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						<tr>
 					</tbody>			
 				</table>
