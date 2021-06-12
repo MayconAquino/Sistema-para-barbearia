@@ -6,7 +6,7 @@
 
 body {
 	color:white ;
-	background-image: url("C.jpg");
+	background-image: url("c.jpeg");
 	background-size: cover;			
 }
 
@@ -137,8 +137,18 @@ body {
 	width: 40%;	
 		
   }  
+  
+p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: .4rem;
+}  
  
 }
+
 
 
 

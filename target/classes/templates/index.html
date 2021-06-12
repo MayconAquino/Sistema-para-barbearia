@@ -47,7 +47,7 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="input">
 				<tr th:each="agenda : ${agendaDoDiaAtual}">
 					<td th:text="${agenda.cliente.nome}">Cliente</td>
 					<td th:text="${agenda.horario.hora}">horario</td>
@@ -55,7 +55,7 @@
 					<td th:text="${agenda.servico.preco}">Preco</td>
 					<td th:text="${#temporals.format(agenda.dia,'dd/MM/yyyy')}">Dia</td>
 					<td th:text="${agenda.Funcionario.nome}">Funcionário</td>
-					<td><input type="checkbox" value="true"></td>	
+					<td><input type="checkbox" id="scales" name="scales" value="true"></td>	
 									
 					<td><a  th:href="@{/agenda/editar/{id}(id=${agenda.id})}"><i class="far fa-edit" style="width:22;height:22"></i></a></td>
 					<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}" ><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
