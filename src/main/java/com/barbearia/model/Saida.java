@@ -85,7 +85,7 @@ public class Saida {
 	}
 
 	public Double getTotal() {
-		return total;
+		return  (double) Math.round(total);
 	}
 
 	public void setTotal(Double total) {

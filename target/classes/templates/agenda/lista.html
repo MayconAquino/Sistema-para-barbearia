@@ -46,9 +46,10 @@
 						<td th:text="${agenda.servico.descricao}">Serviço</td>
 						<td th:text="${agenda.servico.preco}">Preco</td>
 						<td th:text="${#temporals.format(agenda.dia,'dd/MM/yyyy')}">Dia</td>
-						<td th:text="${agenda.Funcionario.nome}">Funcionário</td>
-						<td><input type="checkbox" ></td>
-							
+						<td th:text="${agenda.Funcionario.nome}">Funcionário</td>					
+						<td><input id="check1" type="checkbox" ></td>
+						<td><label for="check1">Atendido</label></td>
+					
 									
 							<td><a th:href="@{/agenda/editar/{id}(id=${agenda.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
 							<td><a th:href="@{/agenda/excluir/{id}(id=${agenda.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
