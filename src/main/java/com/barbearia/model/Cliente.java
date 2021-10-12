@@ -17,8 +17,7 @@ public class Cliente {
 	private String telefone;
 	private String email;
 	
-	
-	
+
 	public Cliente() {
 		// TODO Auto-generated constructor stub
 	}

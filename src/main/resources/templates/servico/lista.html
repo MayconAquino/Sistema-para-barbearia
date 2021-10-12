@@ -8,6 +8,14 @@
 			<div class="container">
 	
 				<h1><a href="/" ><i class="fas fa-arrow-left"></i></a> Lista de serviços</h1>
+				
+				<div class="alert alert-success" th:if="${msgDeSucesso} != null">
+					<span th:text="${msgDeSucesso}"></span>
+				</div>
+				
+				<div class="alert alert-warning" th:if="${msgDeErro} != null">
+					<span th:text="${msgDeErro}"></span>
+				</div>
 			
 				<div class="bt-agenda2">
 					

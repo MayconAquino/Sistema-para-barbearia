@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.barbearia.model.Agenda;
+import com.barbearia.model.Cliente;
+import com.barbearia.model.Servico;
 
 public interface AgendaRepository extends JpaRepository<Agenda, Long> {
 	
@@ -16,5 +18,8 @@ public interface AgendaRepository extends JpaRepository<Agenda, Long> {
 
 	@Query("SELECT a FROM Agenda a WHERE a.funcionario.id = ?1 ORDER BY a.dia ASC")
 	List<Agenda> findAgendaByFuncionario(Long id);
-
+	
+	List<Agenda> findByServico(Servico servico);
+	
+	List<Cliente> findByCliente(Cliente cliente);
 }

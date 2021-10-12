@@ -1,5 +1,6 @@
 package com.barbearia.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.barbearia.model.Agenda;
 import com.barbearia.model.Servico;
+import com.barbearia.repository.AgendaRepository;
 import com.barbearia.repository.ServicoRepository;
 
 @Controller
@@ -19,6 +22,9 @@ public class ServicoController {
 
 	@Autowired
 	ServicoRepository servicoRepository;
+	
+	@Autowired
+	AgendaRepository agendaRepository;
 
 	@GetMapping("/cadastro")
 	public String cadastro(Servico servico, Model model) {
@@ -49,7 +55,17 @@ public class ServicoController {
 
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, Model model) {
-		servicoRepository.deleteById(id);
-		return abrirLista(model);
+		
+		Servico servico = servicoRepository.getOne(id);
+		List<Agenda> agenda = agendaRepository.findByServico(servico);
+		
+		if (agenda.isEmpty()) {
+			servicoRepository.deleteById(id);
+			model.addAttribute("msgDeSucesso", "Serviço excluído com sucesso!");
+			return abrirLista(model);
+		} else {
+			model.addAttribute("msgDeErro", "Esse serviço já possui agendas. Sendo assim, não é possível excluir!");
+			return abrirLista(model);
+		}
 	}
 }
