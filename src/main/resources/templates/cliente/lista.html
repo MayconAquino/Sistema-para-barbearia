@@ -31,8 +31,8 @@
 							<td th:text="${cliente.endereco}">Endereço do cliente</td>  
 							<td th:text="${cliente.telefone}">Telefone do cliente</td>  
 							<td th:text="${cliente.email}">Email do cliente</td>  
-							<td><a th:href="@{/cliente/editar/{id}(id=${cliente.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
-							<td><a th:href="@{/cliente/excluir/{id}(id=${cliente.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/cliente/editar/{id}(id=${cliente.idPessoa})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/cliente/excluir/{id}(id=${cliente.idPessoa})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						</tr>	
 					</tbody>			
 				</table>

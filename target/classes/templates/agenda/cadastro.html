@@ -15,9 +15,9 @@
 			<table>
 				<div class="form-group"> 
 					<label>Cliente:</label>
-					<select th:field="${agenda.cliente.id}" class="form-control" required>
+					<select th:field="${agenda.cliente.idPessoa}" class="form-control" required>
 							<option value="">Selecione...</option>
-							<option th:each="clientes : ${listaDeClientes}" th:value="${clientes.id}" th:text="${clientes.nome}" ></option>
+							<option th:each="clientes : ${listaDeClientes}" th:value="${clientes.idPessoa}" th:text="${clientes.nome}" ></option>
 						</select>	
 				</div>
 				
