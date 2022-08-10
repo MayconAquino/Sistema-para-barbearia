@@ -13,13 +13,9 @@ import javax.persistence.OneToMany;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Funcionario {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class Funcionario extends Pessoa{
+	private static final long serialVersionUID = 1L;
 	private Double comissao;
-	private String nome;
 	private String funcao;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -32,19 +28,10 @@ public class Funcionario {
 	}
 
 	public Funcionario(Double comissao, String nome, String funcao, LocalDate dataAdmissao) {
-		super();
+		super(nome);
 		this.comissao = comissao;
-		this.nome = nome;
 		this.funcao = funcao;
 		this.dataAdmissao = dataAdmissao;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Double getComissao() {
@@ -53,14 +40,6 @@ public class Funcionario {
 
 	public void setComissao(Double comissao) {
 		this.comissao = comissao;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getFuncao() {

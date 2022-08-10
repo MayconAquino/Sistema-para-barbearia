@@ -4,15 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-public class Fornecedor {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String nome;
+@PrimaryKeyJoinColumn(name="idPessoa")
+public class Fornecedor extends Pessoa {
+	private static final long serialVersionUID = 1L;
 	private String endereco;
 	private String telefone;
 	private String email;
@@ -22,27 +19,10 @@ public class Fornecedor {
 	}
 	
 	public Fornecedor(String nome, String endereco, String telefone, String email) {
-		super();
-		this.nome = nome;
+		super(nome);
 		this.endereco = endereco;
 		this.telefone = telefone;
 		this.email = email;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getEndereco() {

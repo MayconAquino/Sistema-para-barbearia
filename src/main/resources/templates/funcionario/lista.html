@@ -32,8 +32,8 @@
 							<td th:text="${funcionario.funcao}">Função</td>
 							<td th:text="${#temporals.format(funcionario.dataAdmissao,'dd/MM/yyyy')}">Dia</td>
 							
-							<td><a th:href="@{/funcionario/editar/{id}(id=${funcionario.id})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
-							<td><a th:href="@{/funcionario/excluir/{id}(id=${funcionario.id})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/funcionario/editar/{idPessoa}(id=${funcionario.idPessoa})}" ><i class="far fa-edit" style="width:22;height:22"></i></a></td>
+							<td><a th:href="@{/funcionario/excluir/{idPessoa}(id=${funcionario.idPessoa})}"><i  class="fas fa-trash-alt" style="width:22;height:22"></i></a></td>
 						<tr>
 					</tbody>			
 				</table>
