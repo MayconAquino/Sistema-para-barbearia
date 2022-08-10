@@ -11,7 +11,7 @@ class CadastroDeFuncionarioTest {
 	@SuppressWarnings("unlikely-arg-type")
 	@Test
 	void CadastrarNovoFuncionario() {
-		Funcionario funcionario = new Funcionario(20.00, "João", "Barbeiro",LocalDate.of(2020, 10, 27));
+		//Funcionario funcionario = new Funcionario(20.00, "João", "Barbeiro",LocalDate.of(2020, 10, 27));
 		
 		
 	}

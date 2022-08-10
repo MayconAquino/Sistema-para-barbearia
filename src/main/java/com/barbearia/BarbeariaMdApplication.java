@@ -84,13 +84,13 @@ public class BarbeariaMdApplication implements CommandLineRunner {
 		Agenda agenda1 = new Agenda(funcionario1, cliente1, LocalDate.now(), horario1, servico1);
 		Agenda agenda2 = new Agenda(funcionario1, cliente2, LocalDate.of(2021, 04, 24), horario2, servico1);
 		Agenda agenda3 = new Agenda(funcionario2, cliente1, LocalDate.of(2021, 04, 24), horario3, servico1);
-		Agenda agenda4 = new Agenda(funcionario1, cliente2, LocalDate.now(), horario4, servico1);
+	    Agenda agenda4 = new Agenda(funcionario1, cliente2, LocalDate.now(), horario4, servico1);
 		Agenda agenda5 = new Agenda(funcionario1, cliente1, LocalDate.of(2021, 04, 24), horario1, servico1);
 		Agenda agenda6 = new Agenda(funcionario2, cliente2, LocalDate.now(), horario1, servico1);
 		Agenda agenda7 = new Agenda(funcionario1, cliente1, LocalDate.of(2021, 04, 24), horario1, servico1);
 		Agenda agenda8 = new Agenda(funcionario2, cliente1, LocalDate.now(), horario1, servico1);
 		agendaRepository.saveAll(Arrays.asList(agenda1, agenda2, agenda3, agenda4, agenda5, agenda6, agenda7, agenda8));
-
+		
 		Produto produto1 = new Produto("Navalha");
 		produtoRepository.saveAll(Arrays.asList(produto1));
 		
