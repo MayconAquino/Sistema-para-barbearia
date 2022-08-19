@@ -9,6 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Pessoa implements Serializable {
@@ -18,6 +23,8 @@ public class Pessoa implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPessoa;
+	
+	@Getter @Setter
 	private String nome;
 
 	public Pessoa() {

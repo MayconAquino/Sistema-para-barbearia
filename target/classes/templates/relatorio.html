@@ -53,7 +53,7 @@
 					<label>Gerar relatório de agenda por funcionário: </label>
 					<select class="form-control" name="idDoFuncionario" required="required">
 						<option value="" selected="selected">Funcionários...</option>
-						<option th:each="funcionario: ${listaDeFuncionarios}" th:value="${funcionario.id}" th:text="${funcionario.nome}"></option>
+						<option th:each="funcionario: ${listaDeFuncionarios}" th:value="${funcionario.idPessoa}" th:text="${funcionario.nome}"></option>
 					</select>
 					<button type="submit" class="btn btn-primary"> <i class="fas fa-file-download"></i>  Gerar</button> 	
 				</form>

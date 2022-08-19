@@ -24,9 +24,9 @@
 				
 				<div class="form-group">
 					<label>Fornecedor</label>					
-						<select th:field="${saida.fornecedor.id}" class="form-control" required>
+						<select th:field="${saida.fornecedor.idPessoa}" class="form-control" required>
 							<option value="">Selecione...</option>
-							<option th:each="fornecedor : ${listaDeFornecedor}" th:value="${fornecedor.id}" th:text="${fornecedor.nome}" ></option>
+							<option th:each="fornecedor : ${listaDeFornecedor}" th:value="${fornecedor.idPessoa}" th:text="${fornecedor.nome}" ></option>
 						</select>
 				</div>
 				<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>     

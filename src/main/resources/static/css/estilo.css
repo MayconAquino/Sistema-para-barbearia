@@ -10,6 +10,16 @@ body {
 	background-size: cover;			
 }
 
+.login-css {
+	 width: 30%;
+     text-align: center;
+     margin: auto;    	 
+}
+
+.container {
+	margin-top: 200;
+}
+
 
 .lista {	
 	color:white;	

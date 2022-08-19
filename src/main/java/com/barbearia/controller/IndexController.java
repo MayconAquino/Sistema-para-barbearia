@@ -15,7 +15,7 @@ public class IndexController {
 	@Autowired
 	private AgendaRepository agendaRepository;
 
-	@RequestMapping("/")
+	@RequestMapping("index")
 	public String index(Model model) {
 		model.addAttribute("mdbarbearia", "MD BARBEARIA");
 		model.addAttribute("dataAtual", LocalDate.now());
