@@ -5,18 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Funcionario extends Pessoa{
+public class Funcionario extends Pessoa {
 	private static final long serialVersionUID = 1L;
 	private Double comissao;
 	private String funcao;
+	private String login;
+	private String senha;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataAdmissao;
@@ -27,11 +26,13 @@ public class Funcionario extends Pessoa{
 	public Funcionario() {
 	}
 
-	public Funcionario(Double comissao, String nome, String funcao, LocalDate dataAdmissao) {
+	public Funcionario(Double comissao, String nome, String funcao, LocalDate dataAdmissao, String login, String senha) {
 		super(nome);
 		this.comissao = comissao;
 		this.funcao = funcao;
 		this.dataAdmissao = dataAdmissao;
+		this.login = login;
+		this.senha = senha;
 	}
 
 	public Double getComissao() {
@@ -56,6 +57,22 @@ public class Funcionario extends Pessoa{
 
 	public void setDataAdmissao(LocalDate dataAdmissao) {
 		this.dataAdmissao = dataAdmissao;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public List<Horario> getHorarios() {
