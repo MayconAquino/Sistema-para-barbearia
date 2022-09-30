@@ -15,7 +15,7 @@ public class Fornecedor extends Pessoa {
 	private String email;
 
 	public Fornecedor() {
-		// TODO Auto-generated constructor stub
+		//testegit
 	}
 	
 	public Fornecedor(String nome, String endereco, String telefone, String email) {
