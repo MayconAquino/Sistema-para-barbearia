@@ -15,7 +15,7 @@ public class Fornecedor extends Pessoa {
 	private String email;
 
 	public Fornecedor() {
-		//testegit
+		//TESTANDO SUBIR PROJETO
 	}
 	
 	public Fornecedor(String nome, String endereco, String telefone, String email) {
