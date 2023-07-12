@@ -17,6 +17,21 @@ public class Cliente extends Pessoa {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String getPassword() {
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return false;
+	}
+
 
 	public Cliente(String nome, String endereco, String telefone, String email) {
 		super(nome);

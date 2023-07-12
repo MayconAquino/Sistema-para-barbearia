@@ -11,7 +11,7 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Pessoa implements Serializable {
+public abstract class Pessoa implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -43,4 +43,10 @@ public class Pessoa implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+    public abstract String getPassword();
+
+	public abstract String getUsername();
+
+	public abstract boolean isAccountNonExpired();
 }

@@ -7,7 +7,5 @@ import com.barbearia.model.Funcionario;
 
 public interface FuncionarioRepositoy extends JpaRepository<Funcionario, Long> {
 
-	@Query("SELECT f FROM Funcionario f WHERE f.login = ?1")
-	Funcionario findByLogin(String login);
 	
 }

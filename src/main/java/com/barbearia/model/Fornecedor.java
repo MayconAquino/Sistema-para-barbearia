@@ -15,9 +15,23 @@ public class Fornecedor extends Pessoa {
 	private String email;
 
 	public Fornecedor() {
-		//TESTANDO SUBIR PROJETO
 	}
-	
+
+	@Override
+	public String getPassword() {
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return false;
+	}
+
 	public Fornecedor(String nome, String endereco, String telefone, String email) {
 		super(nome);
 		this.endereco = endereco;

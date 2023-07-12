@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConfiguracaoGenerica {
-	
-	@Bean
-	public Connection connection(DataSource dataSource) throws SQLException {
-		return dataSource.getConnection();
-	}
+
+    @Bean
+    Connection connection(DataSource dataSource) throws SQLException {
+        return dataSource.getConnection();
+    }
 
 }
