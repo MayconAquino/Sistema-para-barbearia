@@ -1,9 +1,10 @@
 package com.barbearia.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Horario {
@@ -11,13 +12,8 @@ public class Horario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private String hora;
-	
-
-
 	public Horario() {
-
 	}
 
 	public Horario(String hora) {
@@ -25,7 +21,6 @@ public class Horario {
 		this.hora = hora;
 		
 	}
-
 	public Long getId() {
 		return id;
 	}
@@ -41,9 +36,4 @@ public class Horario {
 	public void setHora(String hora) {
 		this.hora = hora;
 	}
-
-	
-	
-	
-
 }

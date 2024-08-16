@@ -3,10 +3,8 @@ package com.barbearia.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity

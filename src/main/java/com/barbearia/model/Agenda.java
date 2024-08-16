@@ -1,26 +1,20 @@
 package com.barbearia.model;
 
 
-import java.time.LocalDate;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
+import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.sun.istack.NotNull;
+import java.time.LocalDate;
 
-@Entity /* Cria a tabela Agenda no banco de dados */
+@Entity
 public class Agenda {
 
-	@Id /* Identifica qual atributo/campo será o id(chave primária) da tabela Agenda */
-	@GeneratedValue(strategy = GenerationType.IDENTITY) /* Gera o id de forma automática/sequencial 1,2,3.... */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne /* Uma agenda pode ter vários funcionários */
+	@ManyToOne
 	private Funcionario funcionario;
 	
 	@ManyToOne
