@@ -1,11 +1,19 @@
 package com.barbearia.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pessoa implements Serializable {
 	
@@ -15,34 +23,9 @@ public abstract class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPessoa;
 	
-	String nome;
+	private String nome;
 
-	public Pessoa() {
-	}
-	
 	public Pessoa(String nome) {
-		this.nome = nome;
 	}
 
-	public Long getIdPessoa() {
-		return idPessoa;
-	}
-
-	public void setIdPessoa(Long idPessoa) {
-		this.idPessoa = idPessoa;
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-    public abstract String getPassword();
-
-	public abstract String getUsername();
-
-	public abstract boolean isAccountNonExpired();
 }

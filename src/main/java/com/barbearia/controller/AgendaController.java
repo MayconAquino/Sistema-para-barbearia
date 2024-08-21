@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.barbearia.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.barbearia.model.Agenda;
-import com.barbearia.repository.AgendaRepository;
-import com.barbearia.repository.ClienteRepositoy;
-import com.barbearia.repository.FuncionarioRepositoy;
-import com.barbearia.repository.HorarioRepository;
-import com.barbearia.repository.ServicoRepository;
 
 @Controller
 @RequestMapping("/agenda")
@@ -39,7 +35,7 @@ public class AgendaController {
 	private ServicoRepository servicoRepository;
 	
 	@Autowired
-	private ClienteRepositoy clienteRepository;
+	private ClienteRepository clienteRepository;
 
 	@GetMapping("/cadastro")
 	public String cadastro( Agenda agenda, Model model) {
